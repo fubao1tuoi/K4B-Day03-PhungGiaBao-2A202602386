@@ -1,8 +1,8 @@
 # 📊 BÁO CÁO THU HOẠCH NGHIỆM THU BÀI LAB 3 (BƯỚC 3 — SUBMISSION ARTIFACT)
 
-> **Họ và Tên Học viên:** [Điền Họ và Tên]  
-> **Mã Sinh Viên / Mã Học viên:** [Điền MSSV]  
-> **Chủ đề Lựa chọn:** [Điền tên chủ đề đã chọn từ docs/DANH_SACH_DE_TAI.md hoặc Đề tài Mở]  
+> **Họ và Tên Học viên:** Phùng Gia Bảo  
+> **Mã Sinh Viên / Mã Học viên:** 2A202602386
+> **Chủ đề Lựa chọn:** *Trợ lý Đặt Phòng họp & Thiết bị (Facilities Agent):* Kiểm tra lịch phòng trống, thiết bị và tạo booking phòng họp.  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Tiêu chí Đánh giá | Mức độ (1 - 5) | Giải trình chi tiết lý do chọn điểm |
 | :--- | :---: | :--- |
-| **1. Multi-step Reasoning** | / 5 | Bài toán có yêu cầu chia nhỏ nhiều bước suy luận nối tiếp nhau không? |
-| **2. Tool Interaction** | / 5 | Hệ thống có cần kết nối với MCP Server / Cơ sở dữ liệu bên ngoài không? |
-| **3. Dynamic Decision** | / 5 | Bước tiếp theo có phụ thuộc vào kết quả quan sát bước trước không? |
-| **4. Long Horizon Goal** | / 5 | Hệ thống có phải giữ mục tiêu xuyên suốt qua nhiều lượt xử lý không? |
-| **TỔNG ĐIỂM AGENTIC FIT** | **/ 20** | *Nếu tổng điểm > 12/20: Bài toán rất phù hợp triển khai Agentic System.* |
+| **1. Multi-step Reasoning** | 3/ 5 | Bài toán có nhiều bước xử lý như kiểm tra phòng, kiểm tra thiết bị và tạo booking, nhưng quy trình khá tuyến tính và không yêu cầu suy luận phức tạp. |
+| **2. Tool Interaction** | 3/ 5 | Agent cần gọi các tool thông qua MCP Server để truy vấn thông tin nội bộ về phòng họp, thiết bị và thực hiện booking. Tuy nhiên số lượng và loại tool tương đối giới hạn. |
+| **3. Dynamic Decision** | 4/ 5 | Kết quả của bước trước có thể ảnh hưởng đến bước tiếp theo. Ví dụ, nếu phòng không trống hoặc không có thiết bị phù hợp, Agent phải tiếp tục tìm phương án khác. |
+| **4. Long Horizon Goal** | 2/ 5 | Mục tiêu đặt phòng tương đối ngắn, số bước xử lý không nhiều và không cần duy trì kế hoạch dài hạn. |
+| **TỔNG ĐIỂM AGENTIC FIT** | 12/ 20 | Bài toán có mức độ phù hợp vừa đủ với Agentic System và phù hợp để thể hiện ReAct Loop + MCP. |
 
 ---
 
@@ -50,10 +50,10 @@ Dán 1 đoạn trích xuất log tiêu biểu từ file `docs/trace_waterfall.js
 
 ## 3. TỔNG KẾT KẾT QUẢ NGHIỆM THU & NỘP BÀI
 
-- [ ] Đã điền API Key thật trong `.env` và xác nhận Agent chạy mượt mà trên LLM API thật (Gemini/OpenAI).
-- **Tổng số Test Cases đã chạy thành công:** ___ / 5 test cases.
-- **Số lượt gọi Tool qua MCP Server chính xác:** ___ lượt.
-- **Kết quả đẩy Repo nộp bài:** [ ] Đã Commit và Push mã nguồn thành công lên GitHub cá nhân.
+- [X] Đã điền API Key thật trong `.env` và xác nhận Agent chạy mượt mà trên LLM API thật (Gemini/OpenAI).
+- **Tổng số Test Cases đã chạy thành công:** 5 / 5 test cases.
+- **Số lượt gọi Tool qua MCP Server chính xác:** 5 lượt.
+- **Kết quả đẩy Repo nộp bài:** [X] Đã Commit và Push mã nguồn thành công lên GitHub cá nhân.
 
 ---
 

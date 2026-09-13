@@ -3,9 +3,9 @@
     "step": 1,
     "query": "Chào bạn, bạn có thể giới thiệu quy chế học vụ cơ bản của Đại học VinUni không?",
     "action_type": "FINAL_ANSWER",
-    "thought": "Câu hỏi chung về quy chế học vụ, trả lời trực tiếp không cần gọi Tool.",
-    "output": "[Mock Agent Response]: Xin chào! Quy chế học vụ VinUni yêu cầu sinh viên tích lũy tối thiểu 120 tín chỉ và duy trì GPA trên 2.0 để tốt nghiệp.",
-    "latency_ms": 2845.93
+    "thought": "OpenAI phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
+    "output": "Quy chế học vụ cơ bản của Đại học VinUni bao gồm những nội dung chính sau đây:\n\n1. **Chương trình đào tạo**: Sinh viên sẽ được học theo chương trình được thiết kế khoa học, hiện đại, đảm bảo tính linh hoạt và liên ngành.\n\n2. **Đánh giá và xét duyệt**: Điểm số của sinh viên được đánh giá thông qua các kỳ thi, bài tập, thảo luận và các hoạt động thực hành. Hệ thống điểm có thể được sử dụng là thang điểm 10 hoặc A-F, tùy vào quy định của từng chương trình.\n\n3. **Điều kiện tốt nghiệp**: Để tốt nghiệp, sinh viên cần hoàn thành số tín chỉ tối thiểu, đạt yêu cầu về điểm số, và thực hiện các điều kiện khác theo quy định.\n\n4. **Quy định về học tập**: Sinh viên có trách nhiệm tuân thủ nội quy học tập, bao gồm tham gia đầy đủ các buổi học, thực hành và các hoạt động ngoại khóa.\n\n5. **Xử lý vi phạm**: Các hành vi gian lận trong học tập, như sao chép, quay cóp, sẽ bị xử lý nghiêm theo quy định của nhà trường.\n\n6. **Hỗ trợ sinh viên**: VinUni cung cấp các dịch vụ hỗ trợ học tập, tư vấn tâm lý, và tổ chức các hoạt động hướng nghiệp cho sinh viên.\n\nNếu bạn cần thông tin chi tiết hơn về một phần cụ thể nào đó trong quy chế học vụ, vui lòng cho biết!",
+    "latency_ms": 7690.94
   },
   {
     "step": 1,
@@ -15,15 +15,298 @@
     "arguments": {
       "student_id": "SV2026001"
     },
-    "observation": {},
-    "latency_ms": 799.12
+    "observation": {
+      "status": "SUCCESS",
+      "student_id": "SV2026001",
+      "data": {
+        "full_name": "Nguyễn Văn An",
+        "class": "AI-K4",
+        "gpa": 3.85,
+        "email": "an.nv@vinuni.edu.vn",
+        "status": "Đang học",
+        "advisor": "PGS.TS Nguyễn Văn A"
+      }
+    },
+    "latency_ms": 1133.95
   },
   {
     "step": 2,
     "query": "Hãy tra cứu thông tin học vụ của sinh viên SV2026001.",
     "action_type": "FINAL_ANSWER",
-    "thought": "Tổng hợp kết quả từ MCP Server thành công.",
-    "output": "Chưa thể trả lời chi tiết do chưa nhận được dữ liệu từ MCP Server (hãy hoàn thành TODO 2.1).",
-    "latency_ms": 10.0
+    "thought": "OpenAI phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
+    "output": "Thông tin học vụ của sinh viên SV2026001 như sau:\n\n- **Họ và tên**: Nguyễn Văn An\n- **Lớp**: AI-K4\n- **Điểm GPA**: 3.85\n- **Email**: an.nv@vinuni.edu.vn\n- **Trạng thái**: Đang học\n- **Cố vấn học tập**: PGS.TS Nguyễn Văn A",
+    "latency_ms": 1380.35
+  },
+  {
+    "step": 1,
+    "query": "Tôi muốn đặt phòng họp vào lúc 14:00 ngày 15/09/2026 cho 6 người, cần máy chiếu và bảng trắng. Hãy tìm phòng phù hợp và đặt phòng giúp tôi.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "check_room_availability",
+    "arguments": {
+      "datetime_str": "14:00 15/09/2026",
+      "capacity": 6
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "datetime": "14:00 15/09/2026",
+      "requested_capacity": 6,
+      "available_rooms": [
+        {
+          "room_id": "A101",
+          "room_name": "A101",
+          "capacity": 6,
+          "equipment": [
+            "máy chiếu",
+            "bảng trắng"
+          ]
+        },
+        {
+          "room_id": "B201",
+          "room_name": "B201",
+          "capacity": 12,
+          "equipment": [
+            "máy chiếu",
+            "bảng trắng",
+            "TV",
+            "micro"
+          ]
+        },
+        {
+          "room_id": "B202",
+          "room_name": "B202",
+          "capacity": 20,
+          "equipment": [
+            "máy chiếu",
+            "bảng trắng",
+            "TV",
+            "micro"
+          ]
+        }
+      ]
+    },
+    "latency_ms": 863.52
+  },
+  {
+    "step": 2,
+    "query": "Tôi muốn đặt phòng họp vào lúc 14:00 ngày 15/09/2026 cho 6 người, cần máy chiếu và bảng trắng. Hãy tìm phòng phù hợp và đặt phòng giúp tôi.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "book_meeting_room",
+    "arguments": {
+      "room_id": "A101",
+      "datetime_str": "14:00 15/09/2026",
+      "capacity": 6
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "booking_id": "ROOM-A101-004",
+      "room_id": "A101",
+      "room_name": "A101",
+      "datetime": "14:00 15/09/2026",
+      "capacity": 6,
+      "message": "Đặt phòng A101 thành công vào lúc 14:00 15/09/2026 cho 6 người."
+    },
+    "latency_ms": 1803.42
+  },
+  {
+    "step": 3,
+    "query": "Tôi muốn đặt phòng họp vào lúc 14:00 ngày 15/09/2026 cho 6 người, cần máy chiếu và bảng trắng. Hãy tìm phòng phù hợp và đặt phòng giúp tôi.",
+    "action_type": "FINAL_ANSWER",
+    "thought": "OpenAI phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
+    "output": "Bạn đã đặt phòng họp thành công! Dưới đây là thông tin chi tiết:\n\n- **Phòng họp:** A101\n- **Thời gian:** 14:00 ngày 15/09/2026\n- **Số lượng người:** 6\n- **Thiết bị có sẵn:** Máy chiếu, bảng trắng\n- **Mã đặt phòng:** ROOM-A101-004\n\nNếu cần thêm thông tin hay hỗ trợ gì khác, vui lòng cho tôi biết!",
+    "latency_ms": 1318.48
+  },
+  {
+    "step": 1,
+    "query": "Tôi cần tổ chức một cuộc họp lúc 09:00 ngày 16/09/2026 cho 8 người, cần máy chiếu. Hãy kiểm tra các phòng còn trống, chọn phòng phù hợp có đủ thiết bị và tiến hành đặt phòng.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "check_room_availability",
+    "arguments": {
+      "datetime_str": "09:00 16/09/2026",
+      "capacity": 8
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "datetime": "09:00 16/09/2026",
+      "requested_capacity": 8,
+      "available_rooms": [
+        {
+          "room_id": "A102",
+          "room_name": "A102",
+          "capacity": 8,
+          "equipment": [
+            "máy chiếu",
+            "bảng trắng",
+            "TV"
+          ]
+        },
+        {
+          "room_id": "B201",
+          "room_name": "B201",
+          "capacity": 12,
+          "equipment": [
+            "máy chiếu",
+            "bảng trắng",
+            "TV",
+            "micro"
+          ]
+        },
+        {
+          "room_id": "B202",
+          "room_name": "B202",
+          "capacity": 20,
+          "equipment": [
+            "máy chiếu",
+            "bảng trắng",
+            "TV",
+            "micro"
+          ]
+        }
+      ]
+    },
+    "latency_ms": 1288.53
+  },
+  {
+    "step": 2,
+    "query": "Tôi cần tổ chức một cuộc họp lúc 09:00 ngày 16/09/2026 cho 8 người, cần máy chiếu. Hãy kiểm tra các phòng còn trống, chọn phòng phù hợp có đủ thiết bị và tiến hành đặt phòng.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "check_room_equipment",
+    "arguments": {
+      "room_id": "A102",
+      "required_equipment": [
+        "máy chiếu"
+      ]
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "room_id": "A102",
+      "room_name": "A102",
+      "required_equipment": [
+        "máy chiếu"
+      ],
+      "available_equipment": [
+        "máy chiếu",
+        "bảng trắng",
+        "TV"
+      ],
+      "message": "Phòng A102 có đầy đủ thiết bị được yêu cầu."
+    },
+    "latency_ms": 878.23
+  },
+  {
+    "step": 3,
+    "query": "Tôi cần tổ chức một cuộc họp lúc 09:00 ngày 16/09/2026 cho 8 người, cần máy chiếu. Hãy kiểm tra các phòng còn trống, chọn phòng phù hợp có đủ thiết bị và tiến hành đặt phòng.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "book_meeting_room",
+    "arguments": {
+      "room_id": "A102",
+      "datetime_str": "09:00 16/09/2026",
+      "capacity": 8
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "booking_id": "ROOM-A102-005",
+      "room_id": "A102",
+      "room_name": "A102",
+      "datetime": "09:00 16/09/2026",
+      "capacity": 8,
+      "message": "Đặt phòng A102 thành công vào lúc 09:00 16/09/2026 cho 8 người."
+    },
+    "latency_ms": 895.03
+  },
+  {
+    "step": 4,
+    "query": "Tôi cần tổ chức một cuộc họp lúc 09:00 ngày 16/09/2026 cho 8 người, cần máy chiếu. Hãy kiểm tra các phòng còn trống, chọn phòng phù hợp có đủ thiết bị và tiến hành đặt phòng.",
+    "action_type": "FINAL_ANSWER",
+    "thought": "OpenAI phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
+    "output": "Cuộc họp của bạn đã được tổ chức thành công! Phòng A102 đã được đặt vào lúc 09:00 ngày 16/09/2026 cho 8 người. Phòng có đầy đủ thiết bị như máy chiếu, bảng trắng và TV.\n\nNếu bạn cần thêm thông tin gì khác, hãy cho tôi biết nhé!",
+    "latency_ms": 1263.6
+  },
+  {
+    "step": 1,
+    "query": "Tôi muốn đặt một phòng họp cho 20 người vào lúc 15:00 ngày 17/09/2026, có máy chiếu và bảng trắng. Hãy kiểm tra và đặt phòng giúp tôi.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "check_room_availability",
+    "arguments": {
+      "datetime_str": "15:00 17/09/2026",
+      "capacity": 20
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "datetime": "15:00 17/09/2026",
+      "requested_capacity": 20,
+      "available_rooms": [
+        {
+          "room_id": "B202",
+          "room_name": "B202",
+          "capacity": 20,
+          "equipment": [
+            "máy chiếu",
+            "bảng trắng",
+            "TV",
+            "micro"
+          ]
+        }
+      ]
+    },
+    "latency_ms": 1010.54
+  },
+  {
+    "step": 2,
+    "query": "Tôi muốn đặt một phòng họp cho 20 người vào lúc 15:00 ngày 17/09/2026, có máy chiếu và bảng trắng. Hãy kiểm tra và đặt phòng giúp tôi.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "check_room_equipment",
+    "arguments": {
+      "room_id": "B202",
+      "required_equipment": [
+        "máy chiếu",
+        "bảng trắng"
+      ]
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "room_id": "B202",
+      "room_name": "B202",
+      "required_equipment": [
+        "máy chiếu",
+        "bảng trắng"
+      ],
+      "available_equipment": [
+        "máy chiếu",
+        "bảng trắng",
+        "TV",
+        "micro"
+      ],
+      "message": "Phòng B202 có đầy đủ thiết bị được yêu cầu."
+    },
+    "latency_ms": 1531.65
+  },
+  {
+    "step": 3,
+    "query": "Tôi muốn đặt một phòng họp cho 20 người vào lúc 15:00 ngày 17/09/2026, có máy chiếu và bảng trắng. Hãy kiểm tra và đặt phòng giúp tôi.",
+    "action_type": "TOOL_EXECUTION",
+    "tool_name": "book_meeting_room",
+    "arguments": {
+      "room_id": "B202",
+      "datetime_str": "15:00 17/09/2026",
+      "capacity": 20
+    },
+    "observation": {
+      "status": "SUCCESS",
+      "booking_id": "ROOM-B202-006",
+      "room_id": "B202",
+      "room_name": "B202",
+      "datetime": "15:00 17/09/2026",
+      "capacity": 20,
+      "message": "Đặt phòng B202 thành công vào lúc 15:00 17/09/2026 cho 20 người."
+    },
+    "latency_ms": 885.31
+  },
+  {
+    "step": 4,
+    "query": "Tôi muốn đặt một phòng họp cho 20 người vào lúc 15:00 ngày 17/09/2026, có máy chiếu và bảng trắng. Hãy kiểm tra và đặt phòng giúp tôi.",
+    "action_type": "FINAL_ANSWER",
+    "thought": "OpenAI phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
+    "output": "Phòng họp B202 đã được đặt thành công vào lúc 15:00 ngày 17/09/2026 cho 20 người. Phòng có đầy đủ thiết bị cần thiết gồm máy chiếu và bảng trắng. \n\nNếu bạn cần thêm thông tin gì khác, hãy cho tôi biết nhé!",
+    "latency_ms": 1111.82
   }
 ]

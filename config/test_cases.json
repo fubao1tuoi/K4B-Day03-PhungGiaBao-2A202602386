@@ -1,0 +1,37 @@
+[
+  {
+    "id": "TC01",
+    "type": "direct_query",
+    "question": "Chào bạn, bạn có thể giới thiệu quy chế học vụ cơ bản của Đại học VinUni không?",
+    "expected_behavior": "Chatbot trả lời trực tiếp từ System Prompt, không cần gọi bất kỳ Tool nào.",
+    "complexity": "Low"
+  },
+  {
+    "id": "TC02",
+    "type": "single_tool_query",
+    "question": "Hãy tra cứu thông tin học vụ của sinh viên SV2026001.",
+    "expected_behavior": "Agent nhận diện nhu cầu tra cứu, tự động phát sinh Tool Call 'academic_query' với mã SV2026001.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC03",
+    "type": "appointment_booking",
+    "question": "Tôi muốn đặt phòng họp vào lúc 14:00 ngày 15/09/2026 cho 6 người, cần máy chiếu và bảng trắng. Hãy tìm phòng phù hợp và đặt phòng giúp tôi.",
+    "expected_behavior": "Agent kiểm tra phòng còn trống theo thời gian và số người, kiểm tra các thiết bị được yêu cầu, sau đó thực hiện Tool Call để tạo booking phòng họp phù hợp.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC04",
+    "type": "multi_step_reasoning",
+    "question": "Tôi cần tổ chức một cuộc họp lúc 09:00 ngày 16/09/2026 cho 8 người, cần máy chiếu. Hãy kiểm tra các phòng còn trống, chọn phòng phù hợp có đủ thiết bị và tiến hành đặt phòng.",
+    "expected_behavior": "Agent thực hiện chuỗi suy luận ReAct đa bước: kiểm tra phòng trống trước, kiểm tra sức chứa và thiết bị của các phòng phù hợp, sau đó lựa chọn phòng đáp ứng yêu cầu và thực hiện booking.",
+    "complexity": "High"
+  },
+  {
+    "id": "TC05",
+    "type": "edge_case_handling",
+    "question": "Tôi muốn đặt một phòng họp cho 20 người vào lúc 15:00 ngày 17/09/2026, có máy chiếu và bảng trắng. Hãy kiểm tra và đặt phòng giúp tôi.",
+    "expected_behavior": "Agent kiểm tra dữ liệu phòng và thiết bị. Nếu không có phòng nào đáp ứng đầy đủ yêu cầu, Agent phải trả về thông báo phù hợp về việc không tìm thấy phòng khả dụng và không được tự bịa hoặc xác nhận booking khi chưa thực hiện thành công.",
+    "complexity": "Medium"
+  }
+]
